@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="حزم Loving Homes: المميزة، الكلاسيكية، واليومية." />
+  <title>Loving Homes | الحزم</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="packages">
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="العودة للصفحة الرئيسية">
+        <span class="logo" aria-hidden="true">🐾</span>
+        <div class="brand-text">
+          <strong class="site-title">Loving Homes</strong>
+          <span class="site-subtitle">فندق الكلاب — رعاية كلاسيكية راقية</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="فتح وإغلاق القائمة">
+          ☰ القائمة
+        </button>
+        <ul id="navMenu" class="nav-list">
+          <li><a class="nav-link" href="index.html">الرئيسية</a></li>
+          <li><a class="nav-link" href="services.html">الخدمات</a></li>
+          <li><a class="nav-link" href="packages.html">الحزم</a></li>
+          <li><a class="nav-link" href="about.html">عن الفندق</a></li>
+          <li><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="container">
+      <header class="page-head">
+        <h1>الحزم</h1>
+        <p>اختر الحزمة المناسبة — سيتم حفظ اختيارك تلقائيًا لصفحة التواصل.</p>
+      </header>
+
+      <div class="notice" role="status" aria-live="polite" id="selectedNotice">
+        لم يتم اختيار أي حزمة بعد.
+      </div>
+
+      <section class="grid cards-3">
+        <article class="card price" id="premium">
+          <div class="price-top">
+            <h2>الحزمة المميزة</h2>
+            <span class="tag">شاملة</span>
+          </div>
+          <ul class="list">
+            <li>أربع جولات مشي يوميًا</li>
+            <li>أربع أنشطة يوميًا</li>
+            <li>مساحة عشب خاصة</li>
+            <li>صور وتحديثات يومية</li>
+            <li>مكافآت للكلب</li>
+          </ul>
+          <button class="btn primary full js-pick" data-package="الحزمة المميزة" type="button">اختر هذه الحزمة</button>
+        </article>
+
+        <article class="card price" id="classic">
+          <div class="price-top">
+            <h2>الحزمة الكلاسيكية</h2>
+            <span class="tag neutral">متوازنة</span>
+          </div>
+          <ul class="list">
+            <li>ثلاث جولات مشي يوميًا</li>
+            <li>حظيرة لعب داخلية</li>
+            <li>منطقة استرخاء</li>
+            <li>جلسة تنظيف وحلاقة</li>
+          </ul>
+          <button class="btn primary full js-pick" data-package="الحزمة الكلاسيكية" type="button">اختر هذه الحزمة</button>
+        </article>
+
+        <article class="card price" id="day">
+          <div class="price-top">
+            <h2>الحزمة اليومية</h2>
+            <span class="tag neutral">نهارية</span>
+          </div>
+          <ul class="list">
+            <li>جولتا مشي يوميًا</li>
+            <li>منطقة لعب خارجية</li>
+            <li>مسار رشاقة</li>
+            <li>حفرة رمل للحفر</li>
+          </ul>
+          <button class="btn primary full js-pick" data-package="الحزمة اليومية" type="button">اختر هذه الحزمة</button>
+        </article>
+      </section>
+
+      <section class="section section-soft">
+        <div class="section-head">
+          <h2>ملاحظة</h2>
+          <p>بعد اختيار الحزمة انتقل لصفحة التواصل لإرسال طلبك. سيتم إدراج اسم الحزمة تلقائيًا.</p>
+        </div>
+        <a class="btn ghost" href="contact.html">اذهب للتواصل</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Loving Homes — جميع الحقوق محفوظة.</p>
+      <p class="muted">اختيارك يُحفظ محليًا على جهازك.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
