@@ -1,112 +1,205 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="تواصل مع Loving Homes لحجز إقامة أو الاستفسار." />
-  <title>Loving Homes | تواصل معنا</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="تواصل مع Loving Homes لحجز إقامة أو الاستفسار."/>
+<title>Loving Homes | تواصل معنا</title>
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+.form-status{margin-top:15px;font-weight:bold;min-height:24px}
+.form-status.success{color:#2e7d32}
+.form-status.error{color:#c62828}
+.loading{opacity:.7;pointer-events:none}
+</style>
 </head>
 
 <body data-page="contact">
-  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="العودة للصفحة الرئيسية">
-        <span class="logo" aria-hidden="true">🐾</span>
-        <div class="brand-text">
-          <strong class="site-title">Loving Homes</strong>
-          <span class="site-subtitle">فندق الكلاب — رعاية كلاسيكية راقية</span>
-        </div>
-      </a>
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
 
-      <nav class="nav" aria-label="التنقل الرئيسي">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="فتح وإغلاق القائمة">
-          ☰ القائمة
-        </button>
-        <ul id="navMenu" class="nav-list">
-          <li><a class="nav-link" href="index.html">الرئيسية</a></li>
-          <li><a class="nav-link" href="services.html">الخدمات</a></li>
-          <li><a class="nav-link" href="packages.html">الحزم</a></li>
-          <li><a class="nav-link" href="about.html">عن الفندق</a></li>
-          <li><a class="nav-link" href="contact.html">تواصل معنا</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+<div class="container header-inner">
 
-  <main id="main" class="page">
-    <div class="container">
-      <header class="page-head">
-        <h1>تواصل معنا</h1>
-        <p>أرسل لنا رسالة وسنرد عليك. إذا اخترت حزمة سابقًا سنضيفها تلقائيًا داخل الرسالة.</p>
-      </header>
+<a class="brand" href="index.html">
+<span class="logo">🐾</span>
+<div class="brand-text">
+<strong class="site-title">Loving Homes</strong>
+<span class="site-subtitle">فندق الكلاب — رعاية كلاسيكية راقية</span>
+</div>
+</a>
 
-      <div class="grid cards-2">
-        <section class="card">
-          <h2>نموذج التواصل</h2>
-          <form id="contactForm" class="form" novalidate>
-            <div class="form-row">
-              <label for="name">الاسم الكامل</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
-              <small class="hint">مطلوب</small>
-            </div>
+<nav class="nav">
+<button class="nav-toggle" type="button">☰ القائمة</button>
+<ul id="navMenu" class="nav-list">
+<li><a class="nav-link" href="index.html">الرئيسية</a></li>
+<li><a class="nav-link" href="services.html">الخدمات</a></li>
+<li><a class="nav-link" href="packages.html">الحزم</a></li>
+<li><a class="nav-link" href="about.html">عن الفندق</a></li>
+<li><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+</ul>
+</nav>
 
-            <div class="form-row">
-              <label for="email">البريد الإلكتروني</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-              <small class="hint">مطلوب</small>
-            </div>
+</div>
+</header>
 
-            <div class="form-row">
-              <label for="subject">الموضوع</label>
-              <input id="subject" name="subject" type="text" placeholder="مثال: حجز إقامة" />
-            </div>
+<main id="main" class="page">
 
-            <div class="form-row">
-              <label for="message">الرسالة</label>
-              <textarea id="message" name="message" rows="7" required></textarea>
-              <small class="hint">مطلوب</small>
-            </div>
+<div class="container">
 
-            <div class="form-actions">
-              <button class="btn primary" type="submit">إرسال</button>
-              <button class="btn ghost" type="reset">مسح</button>
-            </div>
+<header class="page-head">
+<h1>تواصل معنا</h1>
+<p>أرسل لنا رسالة وسنرد عليك.</p>
+</header>
 
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
-        </section>
+<div class="grid cards-2">
 
-        <aside class="card">
-          <h2>معلومات التواصل</h2>
-          <ul class="info">
-            <li><strong>الهاتف:</strong> +962 7 0000 0000</li>
-            <li><strong>البريد:</strong> info@lovinghomes.com</li>
-            <li><strong>العنوان:</strong> عمّان — الأردن</li>
-          </ul>
+<section class="card">
 
-          <div class="notice compact" role="status" aria-live="polite">
-            الحزمة المختارة: <strong id="pickedPackage">—</strong>
-          </div>
+<h2>نموذج التواصل</h2>
 
-          <p class="muted small">
-            * النموذج هنا للتجربة (Front-end). لإرسال فعلي نحتاج Back-end أو خدمة بريد.
-          </p>
-        </aside>
-      </div>
-    </div>
-  </main>
+<form id="contactForm"
+class="form"
+action="https://formsubmit.co/kangfo704@gmail.com"
+method="POST"
+novalidate>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Loving Homes — جميع الحقوق محفوظة.</p>
-      <p class="muted">نسعد بخدمتك وخدمة كلبك.</p>
-    </div>
-  </footer>
+<input type="hidden" name="_subject" value="رسالة جديدة من موقع Loving Homes">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
 
-  <script src="js/main.js"></script>
+<div class="form-row">
+<label for="name">الاسم الكامل</label>
+<input id="name" name="name" type="text" required>
+</div>
+
+<div class="form-row">
+<label for="email">البريد الإلكتروني</label>
+<input id="email" name="email" type="email" required>
+</div>
+
+<div class="form-row">
+<label for="subject">الموضوع</label>
+<input id="subject" name="subject" type="text">
+</div>
+
+<div class="form-row">
+<label for="message">الرسالة</label>
+<textarea id="message" name="message" rows="6" required></textarea>
+</div>
+
+<input type="hidden" name="package" id="hiddenPackage">
+
+<div class="form-actions">
+<button class="btn primary" type="submit" id="submitBtn">إرسال</button>
+<button class="btn ghost" type="reset">مسح</button>
+</div>
+
+<p class="form-status" id="formStatus"></p>
+
+</form>
+
+</section>
+
+<aside class="card">
+
+<h2>معلومات التواصل</h2>
+
+<ul class="info">
+<li><strong>الهاتف:</strong> +962 7 0000 0000</li>
+<li><strong>البريد:</strong> info@lovinghomes.com</li>
+<li><strong>العنوان:</strong> عمّان — الأردن</li>
+</ul>
+
+<div class="notice compact">
+الحزمة المختارة:
+<strong id="pickedPackage">—</strong>
+</div>
+
+</aside>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>© <span id="year"></span> Loving Homes</p>
+</div>
+</footer>
+
+<script src="main.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const form=document.getElementById("contactForm")
+const status=document.getElementById("formStatus")
+const btn=document.getElementById("submitBtn")
+
+const picked=document.getElementById("pickedPackage")
+const hiddenPackage=document.getElementById("hiddenPackage")
+const message=document.getElementById("message")
+
+if(picked && picked.textContent.trim()!=="—"){
+hiddenPackage.value=picked.textContent.trim()
+}
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault()
+
+btn.disabled=true
+btn.textContent="جاري الإرسال..."
+
+fetch(form.action,{
+method:"POST",
+body:new FormData(form),
+headers:{Accept:"application/json"}
+})
+
+.then(response=>{
+
+if(response.ok){
+
+form.reset()
+
+status.className="form-status success"
+status.textContent="تم إرسال رسالتك بنجاح. شكراً لتواصلك معنا."
+
+}else{
+
+status.className="form-status error"
+status.textContent="حدث خطأ أثناء الإرسال"
+
+}
+
+})
+
+.catch(()=>{
+
+status.className="form-status error"
+status.textContent="فشل الاتصال بالخادم"
+
+})
+
+.finally(()=>{
+
+btn.disabled=false
+btn.textContent="إرسال"
+
+})
+
+})
+
+const year=document.getElementById("year")
+if(year) year.textContent=new Date().getFullYear()
+
+})
+
+</script>
+
 </body>
-
 </html>
